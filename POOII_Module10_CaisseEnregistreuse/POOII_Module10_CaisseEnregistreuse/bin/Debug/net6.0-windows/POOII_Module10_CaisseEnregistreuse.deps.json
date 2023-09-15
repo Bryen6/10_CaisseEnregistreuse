@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "POOII_Module10_CaisseEnregistreuse/1.0.0": {
+        "runtime": {
+          "POOII_Module10_CaisseEnregistreuse.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "POOII_Module10_CaisseEnregistreuse/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
