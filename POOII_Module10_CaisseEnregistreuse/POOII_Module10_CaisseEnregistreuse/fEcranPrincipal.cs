@@ -29,5 +29,15 @@ namespace POOII_Module10_CaisseEnregistreuse
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSimuler_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
