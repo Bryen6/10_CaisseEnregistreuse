@@ -10,7 +10,7 @@ namespace POOII_Module10_CaisseEnregistreuse
     {
         private TypeEvenementFactureModel m_type;
         private LigneFactureModel m_LigneFactureModel;
-        private FactureModel factureModel;
+        private FactureModel m_factureModel;
 
         public TypeEvenementFactureModel Type
         {
@@ -23,7 +23,14 @@ namespace POOII_Module10_CaisseEnregistreuse
 
         public FactureModel FactureModel
         {
-            get { return factureModel; }
+            get { return m_factureModel; }
+        }
+
+        public FactureModelEvent(TypeEvenementFactureModel p_type, LigneFactureModel p_ligneFactureModel, FactureModel p_factureModel)
+        {
+            m_type = p_type;
+            m_LigneFactureModel = p_ligneFactureModel;
+            m_factureModel = p_factureModel;
         }
 
     }
