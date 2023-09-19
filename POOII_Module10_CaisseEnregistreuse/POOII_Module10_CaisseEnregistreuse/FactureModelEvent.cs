@@ -12,24 +12,24 @@ namespace POOII_Module10_CaisseEnregistreuse
         private LigneFactureModel m_LigneFactureModel;
         private FactureModel m_factureModel;
 
-        public TypeEvenementFactureModel Type
-        {
-            get { return m_type; } 
-        }
-        public LigneFactureModel LigneFactureModel
-        {
-            get { return m_LigneFactureModel; }
-        }
+        //public TypeEvenementFactureModel Type
+        //{
+        //    get { return m_type; } 
+        //}
+        //public LigneFactureModel LigneFactureModel
+        //{
+        //    get { return m_LigneFactureModel; }
+        //}
 
-        public FactureModel FactureModel
-        {
-            get { return m_factureModel; }
-        }
+        //public FactureModel FactureModel
+        //{
+        //    get { return m_factureModel; }
+        //}
 
         public FactureModelEvent(TypeEvenementFactureModel p_type, LigneFactureModel p_ligneFactureModel, FactureModel p_factureModel)
         {
             m_type = p_type;
-            m_LigneFactureModel = p_ligneFactureModel;
+            m_LigneFactureModel = (m_type == TypeEvenementFactureModel.AJOUT_LIGNE) ? p_ligneFactureModel :  null;
             m_factureModel = p_factureModel;
         }
 
@@ -38,6 +38,7 @@ namespace POOII_Module10_CaisseEnregistreuse
     public enum TypeEvenementFactureModel
     {
         AJOUT_LIGNE,
-        NOUVELLE
+        NOUVELLE,
+        SUPPRIMER_TOUT
     }
 }

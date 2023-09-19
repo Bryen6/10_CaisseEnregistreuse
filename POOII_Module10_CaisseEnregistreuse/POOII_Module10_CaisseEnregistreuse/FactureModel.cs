@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace POOII_Module10_CaisseEnregistreuse
 {
     // Sujet
-    public class FactureModel : IObservable<FactureModelEvent>
+    public class FactureModel : IObservable<FactureModelEvent>  //Le type d'éléments envoyé pour les notifications
     {
         private List<IObserver<FactureModelEvent>> m_observateurs;
         private List<LigneFactureModel> m_lignesFacture;
@@ -17,6 +17,7 @@ namespace POOII_Module10_CaisseEnregistreuse
         { 
             this.m_observateurs = new List<IObserver<FactureModelEvent>>();
             this.m_lignesFacture = new List<LigneFactureModel>();
+            this.InformerObservateurs(new FactureModelEvent(TypeEvenementFactureModel.NOUVELLE, null, this));  
         }
 
         public List<LigneFactureModel> LigneFacture
@@ -28,15 +29,14 @@ namespace POOII_Module10_CaisseEnregistreuse
             set 
             { 
                 this.m_lignesFacture = value; 
-                this.InformerObservateurs();
             }
         }
 
-        private void InformerObservateurs()
+        private void InformerObservateurs(FactureModelEvent p_action)
         {
             foreach (var observateur in m_observateurs)
             {
-                observateur.OnNext(this.m_lignesFacture);
+                observateur.OnNext(p_action);
             }
         }
 
@@ -53,15 +53,14 @@ namespace POOII_Module10_CaisseEnregistreuse
         public void AjouterLigne(LigneFactureModel p_ligne)
         {
             m_lignesFacture.Add(p_ligne);
-            InformerObservateurs();
+            InformerObservateurs(new FactureModelEvent(TypeEvenementFactureModel.AJOUT_LIGNE, p_ligne, this));
         }
 
         public void SupprimerToutesLesLignes()
         {
             m_lignesFacture.Clear();
-            InformerObservateurs();
+            InformerObservateurs(new FactureModelEvent (TypeEvenementFactureModel.SUPPRIMER_TOUT, null, this));
         }
-
-        
+ 
     }
 }

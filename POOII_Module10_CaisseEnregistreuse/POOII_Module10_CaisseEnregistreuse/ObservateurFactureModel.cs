@@ -11,7 +11,7 @@ namespace POOII_Module10_CaisseEnregistreuse
         private IDisposable m_seDesabonner;
         private Action<FactureModelEvent> m_action; 
 
-        public ObservateurFactureModel(IObservable<FactureModelEvent> p_sujet, Action<FactureModelEvent> p_action)
+        public ObservateurFactureModel(FactureModel p_sujet, Action<FactureModelEvent> p_action)
         {
             if (p_sujet == null)
             {
@@ -46,8 +46,6 @@ namespace POOII_Module10_CaisseEnregistreuse
         {
             this.m_action(p_action);
         }
-
-        
 
     }
 }
