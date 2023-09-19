@@ -36,7 +36,7 @@
             tb_ecranClient.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tb_ecranClient.Location = new Point(12, 12);
             tb_ecranClient.Name = "tb_ecranClient";
-            tb_ecranClient.Size = new Size(958, 27);
+            tb_ecranClient.Size = new Size(808, 27);
             tb_ecranClient.TabIndex = 0;
             tb_ecranClient.Text = "Bienvenue";
             // 
@@ -44,11 +44,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 53);
+            BackColor = SystemColors.GradientActiveCaption;
+            ClientSize = new Size(832, 53);
             Controls.Add(tb_ecranClient);
             Location = new Point(460, 123);
             MaximumSize = new Size(1300, 100);
-            MinimumSize = new Size(600, 100);
+            MinimumSize = new Size(850, 100);
             Name = "fEcranClient";
             StartPosition = FormStartPosition.Manual;
             Text = "Ecran client";

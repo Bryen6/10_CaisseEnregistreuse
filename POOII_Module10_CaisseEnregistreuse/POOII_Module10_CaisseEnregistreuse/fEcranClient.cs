@@ -7,7 +7,7 @@ namespace POOII_Module10_CaisseEnregistreuse
 
         public ObservateurFactureModel ObservateurClient
         {
-            get { return m_observateurClient;}
+            get { return m_observateurClient; }
         }
 
         public fEcranClient()
@@ -21,7 +21,7 @@ namespace POOII_Module10_CaisseEnregistreuse
                 {
                     if (value.Type == TypeEvenementFactureModel.AJOUT_LIGNE)
                     {
-                        string tbClient =   $"{value.LigneFactureModel.Description}\t " +
+                        string tbClient = $"{value.LigneFactureModel.Description}\t " +
                                             $"{value.LigneFactureModel.Quantite} @\t " +
                                             $"{value.LigneFactureModel.PrixUnitaire} $";
 

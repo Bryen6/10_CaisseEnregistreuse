@@ -38,7 +38,6 @@ namespace POOII_Module10_CaisseEnregistreuse
     public enum TypeEvenementFactureModel
     {
         AJOUT_LIGNE,
-        NOUVELLE,
-        SUPPRIMER_TOUT
+        NOUVELLE
     }
 }

@@ -176,6 +176,7 @@
             // 
             nudPrix.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             nudPrix.Location = new Point(717, 26);
+            nudPrix.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
             nudPrix.Name = "nudPrix";
             nudPrix.Size = new Size(88, 27);
             nudPrix.TabIndex = 4;
@@ -184,6 +185,7 @@
             // 
             nudQuantite.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             nudQuantite.Location = new Point(552, 26);
+            nudQuantite.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nudQuantite.Name = "nudQuantite";
             nudQuantite.Size = new Size(88, 27);
             nudQuantite.TabIndex = 3;
