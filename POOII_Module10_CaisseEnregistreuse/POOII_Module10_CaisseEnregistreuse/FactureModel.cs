@@ -12,25 +12,38 @@ namespace POOII_Module10_CaisseEnregistreuse
     {
         private List<IObserver<FactureModelEvent>> m_observateurs;
         private List<LigneFactureModel> m_lignesFacture;
+        private decimal m_totalFacture;
 
         public FactureModel() 
         { 
             this.m_observateurs = new List<IObserver<FactureModelEvent>>();
             this.m_lignesFacture = new List<LigneFactureModel>();
-            this.InformerObservateurs(new FactureModelEvent(TypeEvenementFactureModel.NOUVELLE, null, this));  
+            //this.InformerObservateurs(new FactureModelEvent(TypeEvenementFactureModel.NOUVELLE, null, this));  
+        }
+        public decimal TotalFacture
+        {
+            get
+            {
+                decimal totalFacture = 0;
+                foreach(LigneFactureModel lignes in m_lignesFacture)
+                {
+                    totalFacture += lignes.PrixTotal;
+                }
+                return totalFacture;
+            }
         }
 
-        public List<LigneFactureModel> LigneFacture
-        {
-            get 
-            { 
-                return m_lignesFacture;
-            }
-            set 
-            { 
-                this.m_lignesFacture = value; 
-            }
-        }
+        //public List<LigneFactureModel> LigneFacture
+        //{
+        //    get
+        //    {
+        //        return m_lignesFacture;
+        //    }
+        //    set
+        //    {
+        //        this.m_lignesFacture = value;
+        //    }
+        //}
 
         private void InformerObservateurs(FactureModelEvent p_action)
         {

@@ -12,19 +12,19 @@ namespace POOII_Module10_CaisseEnregistreuse
         private LigneFactureModel m_LigneFactureModel;
         private FactureModel m_factureModel;
 
-        //public TypeEvenementFactureModel Type
-        //{
-        //    get { return m_type; } 
-        //}
-        //public LigneFactureModel LigneFactureModel
-        //{
-        //    get { return m_LigneFactureModel; }
-        //}
+        public TypeEvenementFactureModel Type
+        {
+            get { return m_type; }
+        }
+        public LigneFactureModel LigneFactureModel
+        {
+            get { return m_LigneFactureModel; }
+        }
 
-        //public FactureModel FactureModel
-        //{
-        //    get { return m_factureModel; }
-        //}
+        public FactureModel FactureModel
+        {
+            get { return m_factureModel; }
+        }
 
         public FactureModelEvent(TypeEvenementFactureModel p_type, LigneFactureModel p_ligneFactureModel, FactureModel p_factureModel)
         {

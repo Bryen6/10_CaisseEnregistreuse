@@ -13,12 +13,12 @@ namespace POOII_Module10_CaisseEnregistreuse
         private decimal m_prixUnitaire;
         private decimal m_prixTotal;
 
-        public LigneFactureModel(string p_description, int p_quantite, decimal p_prixUnitaire, decimal p_prixTotal)
+        public LigneFactureModel(string p_description, int p_quantite, decimal p_prixUnitaire)
         {
             this.m_description = p_description;
             this.m_quantite = p_quantite;
             this.m_prixUnitaire = p_prixUnitaire;
-            this.m_prixTotal = p_prixTotal;
+            this.m_prixTotal = m_prixUnitaire * m_quantite;
         }
 
         public string Description

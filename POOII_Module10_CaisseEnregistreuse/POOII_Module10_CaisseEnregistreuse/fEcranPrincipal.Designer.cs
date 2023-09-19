@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             dgvArticles = new DataGridView();
+            description = new DataGridViewTextBoxColumn();
+            Quantite = new DataGridViewTextBoxColumn();
+            prixUnitaire = new DataGridViewTextBoxColumn();
+            total = new DataGridViewTextBoxColumn();
             lbArticles = new Label();
             lbTotal = new Label();
             tbTotal = new TextBox();
@@ -49,13 +53,48 @@
             // 
             // dgvArticles
             // 
-            dgvArticles.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgvArticles.AllowUserToAddRows = false;
+            dgvArticles.AllowUserToDeleteRows = false;
+            dgvArticles.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvArticles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArticles.BackgroundColor = SystemColors.ActiveBorder;
             dgvArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArticles.Columns.AddRange(new DataGridViewColumn[] { description, Quantite, prixUnitaire, total });
             dgvArticles.Location = new Point(12, 32);
             dgvArticles.Name = "dgvArticles";
+            dgvArticles.ReadOnly = true;
             dgvArticles.RowHeadersWidth = 51;
+            dgvArticles.ScrollBars = ScrollBars.Vertical;
             dgvArticles.Size = new Size(811, 249);
             dgvArticles.TabIndex = 0;
+            // 
+            // description
+            // 
+            description.HeaderText = "Description";
+            description.MinimumWidth = 6;
+            description.Name = "description";
+            description.ReadOnly = true;
+            // 
+            // Quantite
+            // 
+            Quantite.HeaderText = "Quantité";
+            Quantite.MinimumWidth = 6;
+            Quantite.Name = "Quantite";
+            Quantite.ReadOnly = true;
+            // 
+            // prixUnitaire
+            // 
+            prixUnitaire.HeaderText = "PrixUnitaire";
+            prixUnitaire.MinimumWidth = 6;
+            prixUnitaire.Name = "prixUnitaire";
+            prixUnitaire.ReadOnly = true;
+            // 
+            // total
+            // 
+            total.HeaderText = "Total";
+            total.MinimumWidth = 6;
+            total.Name = "total";
+            total.ReadOnly = true;
             // 
             // lbArticles
             // 
@@ -65,22 +104,20 @@
             lbArticles.Size = new Size(65, 20);
             lbArticles.TabIndex = 1;
             lbArticles.Text = "Articles :";
-            lbArticles.Click += label1_Click;
             // 
             // lbTotal
             // 
-            lbTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lbTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lbTotal.AutoSize = true;
             lbTotal.Location = new Point(605, 290);
             lbTotal.Name = "lbTotal";
             lbTotal.Size = new Size(42, 20);
             lbTotal.TabIndex = 2;
             lbTotal.Text = "Total";
-            lbTotal.Click += label2_Click;
             // 
             // tbTotal
             // 
-            tbTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            tbTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             tbTotal.Location = new Point(661, 287);
             tbTotal.Name = "tbTotal";
             tbTotal.Size = new Size(162, 27);
@@ -88,7 +125,7 @@
             // 
             // btPayer
             // 
-            btPayer.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btPayer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btPayer.Location = new Point(719, 320);
             btPayer.Name = "btPayer";
             btPayer.Size = new Size(104, 26);
@@ -189,7 +226,7 @@
             Controls.Add(lbTotal);
             Controls.Add(lbArticles);
             Controls.Add(dgvArticles);
-            MaximumSize = new Size(1300, 600);
+            MaximumSize = new Size(1300, 800);
             MinimumSize = new Size(850, 530);
             Name = "fEcranPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
@@ -219,5 +256,9 @@
         private Label lbPrix;
         private NumericUpDown nudPrix;
         private NumericUpDown nudQuantite;
+        private DataGridViewTextBoxColumn description;
+        private DataGridViewTextBoxColumn Quantite;
+        private DataGridViewTextBoxColumn prixUnitaire;
+        private DataGridViewTextBoxColumn total;
     }
 }

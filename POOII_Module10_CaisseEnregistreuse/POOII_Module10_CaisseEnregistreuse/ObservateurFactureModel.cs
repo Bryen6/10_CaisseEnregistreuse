@@ -42,9 +42,9 @@ namespace POOII_Module10_CaisseEnregistreuse
             throw new NotImplementedException();
         }
 
-        public void OnNext(FactureModelEvent p_action)
+        public void OnNext(FactureModelEvent p_event)
         {
-            this.m_action(p_action);
+            this.m_action(p_event);
         }
 
     }
