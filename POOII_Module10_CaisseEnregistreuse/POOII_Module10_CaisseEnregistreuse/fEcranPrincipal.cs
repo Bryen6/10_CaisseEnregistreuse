@@ -22,6 +22,9 @@ namespace POOII_Module10_CaisseEnregistreuse
             this.m_fEcranClient = new fEcranClient();
             this.m_fEcranClient.Show();
             m_factureModel = new FactureModel();
+
+            m_factureModel.Subscribe(m_fEcranClient.ObservateurClient);
+
             m_observateurEcranPrincipal = new ObservateurFactureModel(
                 m_factureModel,
                 value =>
@@ -31,9 +34,10 @@ namespace POOII_Module10_CaisseEnregistreuse
                         dgvArticles.Rows.Add(
                             value.LigneFactureModel.Description,
                             value.LigneFactureModel.Quantite,
-                            value.LigneFactureModel.PrixUnitaire,
-                            value.LigneFactureModel.PrixTotal
+                            value.LigneFactureModel.PrixUnitaire.ToString("C2"),
+                            value.LigneFactureModel.PrixTotal.ToString("C2")
                         );
+
                     }
                     else if (value.Type == TypeEvenementFactureModel.NOUVELLE)
                     {
@@ -47,7 +51,7 @@ namespace POOII_Module10_CaisseEnregistreuse
 
         private void fEcranPrincipal_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btSimuler_Click(object sender, EventArgs e)
@@ -61,8 +65,13 @@ namespace POOII_Module10_CaisseEnregistreuse
             this.m_factureModel.AjouterLigne(nouvelleLigne);
 
             tbDescription.Clear();
-            nudQuantite.TextAlign = 0;
-            nudPrix.TextAlign = 0;
+            nudQuantite.Value = 0;
+            nudPrix.Value = 0;
+        }
+
+        private void btPayer_Click(object sender, EventArgs e)
+        {
+            this.m_factureModel.SupprimerToutesLesLignes();
         }
     }
 }

@@ -17,8 +17,7 @@ namespace POOII_Module10_CaisseEnregistreuse
         public FactureModel() 
         { 
             this.m_observateurs = new List<IObserver<FactureModelEvent>>();
-            this.m_lignesFacture = new List<LigneFactureModel>();
-            //this.InformerObservateurs(new FactureModelEvent(TypeEvenementFactureModel.NOUVELLE, null, this));  
+            this.m_lignesFacture = new List<LigneFactureModel>();  
         }
         public decimal TotalFacture
         {
@@ -32,18 +31,6 @@ namespace POOII_Module10_CaisseEnregistreuse
                 return totalFacture;
             }
         }
-
-        //public List<LigneFactureModel> LigneFacture
-        //{
-        //    get
-        //    {
-        //        return m_lignesFacture;
-        //    }
-        //    set
-        //    {
-        //        this.m_lignesFacture = value;
-        //    }
-        //}
 
         private void InformerObservateurs(FactureModelEvent p_action)
         {
@@ -72,7 +59,7 @@ namespace POOII_Module10_CaisseEnregistreuse
         public void SupprimerToutesLesLignes()
         {
             m_lignesFacture.Clear();
-            InformerObservateurs(new FactureModelEvent (TypeEvenementFactureModel.SUPPRIMER_TOUT, null, this));
+            InformerObservateurs(new FactureModelEvent (TypeEvenementFactureModel.NOUVELLE, null, this));
         }
  
     }

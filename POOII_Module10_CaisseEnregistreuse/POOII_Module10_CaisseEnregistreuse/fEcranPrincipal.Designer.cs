@@ -57,7 +57,7 @@
             dgvArticles.AllowUserToDeleteRows = false;
             dgvArticles.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvArticles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvArticles.BackgroundColor = SystemColors.ActiveBorder;
+            dgvArticles.BackgroundColor = SystemColors.ActiveCaptionText;
             dgvArticles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvArticles.Columns.AddRange(new DataGridViewColumn[] { description, Quantite, prixUnitaire, total });
             dgvArticles.Location = new Point(12, 32);
@@ -132,6 +132,7 @@
             btPayer.TabIndex = 4;
             btPayer.Text = "Payer";
             btPayer.UseVisualStyleBackColor = true;
+            btPayer.Click += btPayer_Click;
             // 
             // gbSimulateurScaner
             // 
@@ -219,6 +220,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(832, 483);
             Controls.Add(gbSimulateurScaner);
             Controls.Add(btPayer);
