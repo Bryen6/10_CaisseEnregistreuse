@@ -12,7 +12,6 @@ namespace POOII_Module10_CaisseEnregistreuse
     {
         private List<IObserver<FactureModelEvent>> m_observateurs;
         private List<LigneFactureModel> m_lignesFacture;
-        private decimal m_totalFacture;
 
         public FactureModel() 
         { 
