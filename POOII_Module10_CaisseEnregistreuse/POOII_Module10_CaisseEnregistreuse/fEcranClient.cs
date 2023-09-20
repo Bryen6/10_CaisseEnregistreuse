@@ -2,20 +2,14 @@ namespace POOII_Module10_CaisseEnregistreuse
 {
     public partial class fEcranClient : Form
     {
-        private ObservateurFactureModel m_observateurClient;
         private FactureModel m_factureModel;
 
-        public ObservateurFactureModel ObservateurClient
-        {
-            get { return m_observateurClient; }
-        }
-
-        public fEcranClient()
+        public fEcranClient(FactureModel p_factureModel)
         {
             InitializeComponent();
-            m_factureModel = new FactureModel();
+           m_factureModel = p_factureModel;
 
-            m_observateurClient = new ObservateurFactureModel(
+            new ObservateurFactureModel(
                 m_factureModel,
                 value =>
                 {

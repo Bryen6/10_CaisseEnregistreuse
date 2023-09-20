@@ -14,18 +14,15 @@ namespace POOII_Module10_CaisseEnregistreuse
     {
         public fEcranClient m_fEcranClient;
         private FactureModel m_factureModel;
-        private ObservateurFactureModel m_observateurEcranPrincipal;
 
         public fEcranPrincipal()
         {
             InitializeComponent();
-            this.m_fEcranClient = new fEcranClient();
-            this.m_fEcranClient.Show();
             m_factureModel = new FactureModel();
+            this.m_fEcranClient = new fEcranClient(m_factureModel);
+            this.m_fEcranClient.Show();
 
-            m_factureModel.Subscribe(m_fEcranClient.ObservateurClient);
-
-            m_observateurEcranPrincipal = new ObservateurFactureModel(
+           new ObservateurFactureModel(
                 m_factureModel,
                 value =>
                 {
